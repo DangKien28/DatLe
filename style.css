@@ -1,226 +1,361 @@
-body {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(135deg, #7d6be3, #565e61, rgb(54, 56, 18));
-    font-family: Arial, Helvetica, sans-serif;
-    color: azure;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.time {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 10px;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+        }
 
-.time-leaf {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-    gap: 10px;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-article {
-    background-color: rgba(255, 255, 255, 0.1); /* Màu nền với độ trong suốt */
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */
-    display: flex;
-    padding: 10px;
-    /* border: 2px solid rgba(238, 9, 9, 0.34); */
-    border-radius: 5px;
-    font-size: 24px;
-}
+        pre {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
 
-article:hover {
-    background-color: rgba(10, 6, 6, 0.1); /* Màu nền với độ trong suốt */
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */
-}
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
 
-pre {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    padding: 25px 25px 30px 25px;
-    /* border: 2px solid rgb(11, 145, 29); */
-    border-radius: 10px;
-    box-shadow: inset 0 6px 12px rgb(77, 241, 27);
-    font-size: 18px;
-}
+        .music {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
 
-#period {
-    display: flex;
-    /* border: 2px solid rgba(201, 12, 12, 0.34); */
-    border-radius: 8px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 85px;
-    
-    background-color: rgba(10, 6, 6, 0.1); /* Màu nền với độ trong suốt */
-    color: rgb(199, 239, 51);
-    font-size: 40px;
-    box-shadow: 0 4px 8px rgb(31, 241, 31);
-}
+        .music h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-#period:hover {
-    background-color: rgb(223, 249, 55);
-    color: #fb0101;
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */
-}
+        .music ul {
+            list-style: none;
+        }
 
+        .music li {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
 
-.time-now {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-    gap: 10px;
-    font-size: 24px;
-}
+        .music li:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-#day-now {
-    background-color: rgba(255, 255, 255, 0.1); /* Màu nền với độ trong suốt */
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */   
-    display: flex;
-    padding: 8px;
-    /* border: 2px solid rgba(201, 12, 12, 0.34); */
-    border-radius: 5px;
-}
+        .music button {
+            background: none;
+            border: none;
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
 
-#day-now:hover {
-    background-color: rgba(10, 6, 6, 0.1); /* Màu nền với độ trong suốt */
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */
-}
+        .music button:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
 
-#month-now {
-    background-color: rgba(255, 255, 255, 0.1); /* Màu nền với độ trong suốt */
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */
-    display: flex;
-    padding: 5px;
-    /* border: 2px solid rgba(201, 12, 12, 0.34); */
-    border-radius: 5px;
-    padding: 8px;
-}
+        .music button img {
+            width: 24px;
+            height: 24px;
+        }
 
-#month-now:hover {
-    background-color: rgba(10, 6, 6, 0.1); /* Màu nền với độ trong suốt */
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */
-}
+        .time {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
 
-#year-now {
-    background-color: rgba(255, 255, 255, 0.1); /* Màu nền với độ trong suốt */
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */
-    display: flex;
-    padding: 8px;
-    /* border: 2px solid rgba(201, 12, 12, 0.34); */
-    border-radius: 8px;
-}
+        .time-leaf {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
-#year-now:hover{
-    background-color: rgba(10, 6, 6, 0.1); /* Màu nền với độ trong suốt */
-    backdrop-filter: blur(10px); /* Độ mờ */
-    -webkit-backdrop-filter: blur(10px); /* Cho trình duyệt Safari */
-}
+        .time-leaf article {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            backdrop-filter: blur(10px);
+        }
 
-.pic {
-    display: flex;
-    gap: 10px;
-}
-.pic-container {
-    /* border: 1px solid black; */
-    height: 400px;
-    width: 400px;
-    padding: 10px;
-    overflow: hidden;
-}
+        #period {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
 
-.pic-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
-}
+        .time-now {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
 
-.pic-container:hover {
-    transform: scale(2);
-}
+        .time-now article {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
-.main-container {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding-bottom: 30px;
-}
+        .time-now section {
+            font-size: 14px;
+            margin: 5px 0;
+        }
 
-.music {
-    border-radius: 10px;
-    width: 450px;
-    box-shadow: 0 7px 12px rgb(12, 250, 8);
-    height: 350px;
-}
+        .pic {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
 
-.music h3 {
-    text-align: center;
-    color: rgb(53, 237, 66);
-}
+        .pic-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-.playing {
-    border-radius: 10px;
-    width: 450px;
-    height: 350px;
-    box-shadow: 0 7px 12px rgb(12, 250, 8);
-    text-align: center;
-    background-image: url('Image/dat-main.jpg');
-    background-size: cover;
-    background-position: center 27%;
-}
+        .pic-container:hover {
+            transform: scale(1.02);
+        }
 
-ul li {
-    list-style-type: none;
-    padding: 3px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 5px;
-}
+        .pic-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-ul li button {
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  border: none;
-  border-radius: 50px;
-  background: transparent;
-  display: flex;       /* Căn giữa hình ảnh */
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-}
+        .playing {
+            display: none;
+        }
 
-ul li button img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Đảm bảo hình không bị méo */
-}
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
 
-button:hover {
-    background-color: rgb(14, 237, 14);
-}
-button:active {
-    background-color: rgb(240, 233, 11);
-}
+            pre {
+                font-size: 14px;
+                padding: 15px;
+                line-height: 1.4;
+            }
+
+            .main-container {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .music, .time {
+                padding: 15px;
+            }
+
+            .music h3 {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            .music li {
+                padding: 10px;
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+
+            .music button img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .time-leaf {
+                gap: 8px;
+            }
+
+            .time-leaf article {
+                padding: 12px 8px;
+                font-size: 14px;
+            }
+
+            #period {
+                font-size: 16px;
+                padding: 12px;
+                margin: 15px 0;
+            }
+
+            .time-now {
+                padding: 12px;
+            }
+
+            .time-now article {
+                font-size: 14px;
+            }
+
+            .time-now section {
+                font-size: 13px;
+            }
+
+            .pic {
+                padding: 15px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            pre {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            .main-container {
+                padding: 10px;
+                gap: 10px;
+            }
+
+            .music, .time {
+                padding: 12px;
+            }
+
+            .music h3 {
+                font-size: 15px;
+            }
+
+            .music li {
+                padding: 8px;
+                font-size: 12px;
+                margin-bottom: 6px;
+            }
+
+            .music button {
+                margin-right: 8px;
+            }
+
+            .music button img {
+                width: 18px;
+                height: 18px;
+            }
+
+            .time-leaf {
+                gap: 6px;
+            }
+
+            .time-leaf article {
+                padding: 10px 6px;
+                font-size: 13px;
+            }
+
+            #period {
+                font-size: 15px;
+                padding: 10px;
+                margin: 12px 0;
+            }
+
+            .time-now {
+                padding: 10px;
+            }
+
+            .time-now article {
+                font-size: 13px;
+            }
+
+            .time-now section {
+                font-size: 12px;
+            }
+
+            .pic {
+                padding: 10px;
+                gap: 12px;
+            }
+        }
+
+        /* Tablet và Desktop */
+        @media (min-width: 769px) {
+            .main-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+            }
+
+            .music {
+                grid-column: 1;
+                grid-row: 1 / 3;
+            }
+
+            .time {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .pic {
+                grid-column: 1 / 3;
+                grid-row: 3;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                margin: 20px auto;
+            }
+
+            pre {
+                font-size: 18px;
+                padding: 30px;
+            }
+
+            .main-container {
+                padding: 30px;
+                gap: 30px;
+            }
+
+            .music, .time {
+                padding: 25px;
+            }
+
+            .pic {
+                padding: 30px;
+                gap: 25px;
+            }
+        }

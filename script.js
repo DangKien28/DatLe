@@ -1,11 +1,10 @@
 
 //Date
-const leaf = new Date("2025-2-14");
-const now = new Date();
-let period = Math.floor((now-leaf)/(60*60*24*1000));
-
 
 function displayPeriod(){
+    const leaf = new Date("2025-2-14");
+    const now = new Date();
+    let period = Math.floor((now-leaf)/(60*60*24*1000));
     const element = document.getElementById('period');
     element.innerHTML = `<b>${period}⭐️</b>`;
 
